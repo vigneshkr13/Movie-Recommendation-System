@@ -1,0 +1,25 @@
+{% extends "base.html" %} {% block body %}
+
+<div class="container custom-cont">
+  <div class="row-cate">
+    <h1 class="row-title">Top Trending</h1>
+    <a href="#">View All</a>
+  </div>
+  <div class="row-content">
+    {% for _ in range(6) %}
+    <div class="card content">
+      <a href="" class="cover">
+        <img
+          src="/static/images/jjk-test.jpg"
+          class="card-img-top cover-image"
+          alt="..."
+        />
+      </a>
+      <div class="card-body content-body">
+        <h5 class="card-title">Card title</h5>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

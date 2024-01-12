@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+      type="text/css"
+      media="all"
+    />
+    <script src="{{ url_for('static', filename='jquery-3.6.0.js') }}"></script>
+  </head>
+  <body>
+    {% block navbar %}
+    <nav class="navbar navbar-expand-lg bg-light nav-bar-custom">
+      <div class="container">
+        <a class="navbar-brand nav-icon" href="/">
+          <!-- <img
+            src="/static/images/movies-app.png"
+            alt="Logo"
+            width="35"
+            height="30"
+            class="align-text-top default-icon"
+          />
+          <img
+            src="/static/images/popcorn.png"
+            alt="Logo"
+            width="35"
+            height="30"
+            class="align-text-top hover-icon"
+          /> -->
+
+          <lord-icon
+            src="https://cdn.lordicon.com/ulttckpo.json"
+            trigger="in"
+            delay="500"
+            state="in-reveal"
+            colors="primary:#121331,secondary:#3a3347,tertiary:#d3d5f3,quaternary:#02a9ff"
+            style="width: 50px; height: 50px"
+            class="custom-icon"
+          >
+          </lord-icon>
+        </a>
+        <button
+          class="navbar-toggler nav-hamburger"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <!-- <span class="navbar-toggler-icon"></span> -->
+          <svg
+            data-v-8aeb5e9a=""
+            aria-hidden="true"
+            focusable="false"
+            data-prefix="fas"
+            data-icon="bars"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+            class="svg-inline--fa fa-bars fa-w-14 fa-fw fa-2x"
+          >
+            <path
+              data-v-8aeb5e9a=""
+              fill="currentColor"
+              d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+              class=""
+            ></path>
+          </svg>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/mylist">My List</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Random pick</a>
+            </li>
+          </ul>
+          <form class="search-form" role="search" method="post">
+            <input
+              class="search-bar"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+
+            <button class="search-submit" type="submit">Go</button>
+          </form>
+          <!-- <span class="navbar-text">
+            <a class="nav-link" href="/login">Login</a>
+          </span> -->
+        </div>
+      </div>
+    </nav>
+    {% endblock %} {% block body %} {% endblock %}
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
