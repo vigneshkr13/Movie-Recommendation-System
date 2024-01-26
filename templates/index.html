@@ -1,25 +1,89 @@
-{% extends "base.html" %} {% block body %}
+{% extends "base.html" %}
+
+{% block body %}
 
 <div class="container custom-cont">
   <div class="row-cate">
     <h1 class="row-title">Top Trending</h1>
     <a href="#">View All</a>
   </div>
-  <div class="row-content">
-    {% for _ in range(6) %}
-    <div class="card content">
-      <a href="" class="cover">
-        <img
-          src="/static/images/jjk-test.jpg"
-          class="card-img-top cover-image"
-          alt="..."
-        />
-      </a>
-      <div class="card-body content-body">
-        <h5 class="card-title">Card title</h5>
+  <div class="row-content" id="movieContainer">
+    {% for movie_detail in movie_details %}
+      <div class="card content">
+        <a href="{{ url_for('movie_detail') }}" class="cover">
+          <img
+            src="https://image.tmdb.org/t/p/original{{ movie_detail.poster_path }}"
+            class="card-img-top cover-image"
+            alt="{{ movie_detail.title }}"
+          />
+        </a>
+        <div class="card-body content-body">
+          <h5 class="card-title">{{ movie_detail.title }}</h5>
+        </div>
       </div>
-    </div>
     {% endfor %}
   </div>
+  <button class="scroll-btn" onclick="scrollMovies('right')">➡</button>
 </div>
+
+<div class="container custom-cont">
+  <div class="row-cate">
+    <h1 class="row-title">Recommeded Movies</h1>
+    <a href="#">View All</a>
+  </div>
+  <div class="row-content" id="movieContainer">
+    {% for movie_detail in rec_movie_details %}
+      <div class="card content">
+        <a href="" class="cover">
+          <img
+            src="https://image.tmdb.org/t/p/original{{ movie_detail.poster_path }}"
+            class="card-img-top cover-image"
+            alt="{{ movie_detail.title }}"
+          />
+        </a>
+        <div class="card-body content-body">
+          <h5 class="card-title">{{ movie_detail.title }}</h5>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <!-- <button class="scroll-btn" onclick="scrollMovies('right')">➡</button> -->
+</div>
+
+<div class="container custom-cont">
+  <div class="row-cate">
+    <h1 class="row-title">Item Item Recommeded Movies</h1>
+    <a href="#">View All</a>
+  </div>
+  <div class="row-content" id="movieContainer">
+    {% for movie_detail in rec_item_item_movie_details %}
+      <div class="card content">
+        <a href="" class="cover">
+          <img
+            src="https://image.tmdb.org/t/p/original{{ movie_detail.poster_path }}"
+            class="card-img-top cover-image"
+            alt="{{ movie_detail.title }}"
+          />
+        </a>
+        <div class="card-body content-body">
+          <h5 class="card-title">{{ movie_detail.title }}</h5>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <!-- <button class="scroll-btn" onclick="scrollMovies('right')">➡</button> -->
+</div>
+
+<script>
+  function scrollMovies(direction) {
+    const container = document.getElementById('movieContainer');
+    const scrollAmount = 200; // Adjust as needed
+    if (direction === 'right') {
+      container.scrollLeft += scrollAmount;
+    } else {
+      container.scrollLeft -= scrollAmount;
+    }
+  }
+</script>
+
 {% endblock %}

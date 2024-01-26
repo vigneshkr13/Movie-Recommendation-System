@@ -124,13 +124,18 @@ input[type="search"]:focus::-webkit-search-cancel-button {
 .row-cate {
   display: flex;
   justify-content: space-between;
+  /* margin-right: 20px; Add space to the right side of the container
+  width: calc(100% + 20px); Increase the width of the container 
+  box-sizing: border-box; */
 }
 
 .row-content {
-  display: grid;
-  grid-gap: 25px 20px;
-  grid-template-columns: repeat(auto-fill, 185px);
-  justify-content: space-between;
+  display: flex;
+  /* grid-gap: 25px 20px; */
+  /* grid-template-columns: repeat(auto-fill, 185px);
+  justify-content: space-between;  */
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 .content {
@@ -188,4 +193,57 @@ input[type="search"]:focus::-webkit-search-cancel-button {
 
 .card:hover .like-icon {
   display: block; /* Show the like icon on hover */
+}
+/* 
+.container {
+  margin-right: 20px; /* Add space to the right side of the container */
+  width: calc(100% + 20px); /* Increase the width of the container */
+  box-sizing: border-box; /* Include padding and border in the total width */
+} */
+
+.row-content {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.card {
+  flex: 0 0 auto;
+  margin-right: 15px; /* Add some spacing between cards */
+  width: 150px; /* Set a fixed width for each card */
+}
+
+.card img {
+  width: 100%; /* Ensure the image takes up the full width of the card */
+  height: auto;
+}
+
+/* Optionally, you can remove or adjust the grid-related properties */
+/*
+grid-gap: 25px 20px;
+grid-template-columns: repeat(auto-fill, 185px);
+justify-content: space-between;
+*/
+
+
+.card-container {
+  display: inline-flex;
+  flex-wrap: nowrap;
+}
+
+.card {
+  flex: 0 0 auto;
+  margin-right: 15px; /* Adjust as needed for spacing between cards */
+  width: 150px;
+
+}
+
+.card img {
+  width: 100%; /* Ensure the image takes up the full width of the card */
+  height: 100%;
+}
+/* Hide scrollbar in webkit browsers (Chrome, Safari) */
+
+.row-content::-webkit-scrollbar {
+  display: none;
 }
