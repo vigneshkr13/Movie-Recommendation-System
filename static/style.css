@@ -131,11 +131,11 @@ input[type="search"]:focus::-webkit-search-cancel-button {
 
 .row-content {
   display: flex;
-  /* grid-gap: 25px 20px; */
-  /* grid-template-columns: repeat(auto-fill, 185px);
-  justify-content: space-between;  */
-  overflow-x: auto;
-  white-space: nowrap;
+  grid-gap: 25px 20px;
+  grid-template-columns: repeat(auto-fill, 185px);
+  justify-content: space-between;
+  overflow-x: scroll;
+  /* white-space: nowrap; */
 }
 
 .content {
@@ -194,14 +194,13 @@ input[type="search"]:focus::-webkit-search-cancel-button {
 .card:hover .like-icon {
   display: block; /* Show the like icon on hover */
 }
-/* 
+
 .container {
-  margin-right: 20px; /* Add space to the right side of the container */
+  /* margin-right: 20px; Add space to the right side of the container */
   width: calc(100% + 20px); /* Increase the width of the container */
   box-sizing: border-box; /* Include padding and border in the total width */
-} */
-
-.row-content {
+}
+*/ .row-content {
   display: flex;
   overflow-x: auto;
   white-space: nowrap;
@@ -225,7 +224,6 @@ grid-template-columns: repeat(auto-fill, 185px);
 justify-content: space-between;
 */
 
-
 .card-container {
   display: inline-flex;
   flex-wrap: nowrap;
@@ -235,7 +233,6 @@ justify-content: space-between;
   flex: 0 0 auto;
   margin-right: 15px; /* Adjust as needed for spacing between cards */
   width: 150px;
-
 }
 
 .card img {

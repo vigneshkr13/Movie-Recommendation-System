@@ -45,7 +45,7 @@ def index():
 
 
     # Popular Movies
-    popular_movie_file_path = 'C:/Users/essvi/OneDrive/Documents/RMIT/Projects/Movie-Recommendation-System/top_movies_list.txt'
+    popular_movie_file_path = "./top_movies_list.txt"
 
     with open(popular_movie_file_path, 'r') as f:
         pop_movies = [line.strip() for line in f]
@@ -79,7 +79,7 @@ def index():
     # print(pop_movie_details)
 
     # Recommended Movies - User Item Recommendation
-    recommended_movie_file_path = 'C:/Users/essvi/OneDrive/Documents/RMIT/Projects/Movie-Recommendation-System/user_recommendations.txt'
+    recommended_movie_file_path = './user_recommendations.txt'
 
     with open(recommended_movie_file_path, 'r') as f:
         rec_movies = f.readlines()[1]
@@ -119,7 +119,7 @@ def index():
 
 
      # Recommended Movies - Item Item Recommendation
-    item_rec_movie_file_path = 'C:/Users/essvi/OneDrive/Documents/RMIT/Projects/Movie-Recommendation-System/item_item_recommendations.txt'
+    item_rec_movie_file_path = './item_item_recommendations.txt'
 
     with open(item_rec_movie_file_path, 'r') as f:
         item_rec_movies = f.readlines()[1]
